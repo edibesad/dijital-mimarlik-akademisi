@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 interface InfoProps {
@@ -6,25 +5,6 @@ interface InfoProps {
 }
 
 export default function InformationText({ child }: InfoProps) {
-  const [isInView, setIsInView] = useState(false);
-
-  // Ekran boyutunu ve component'ın pozisyonunu takip et
-  const handleScroll = () => {
-    const component = document.getElementById("scrollComponent");
-    if (component) {
-      const rect = component.getBoundingClientRect();
-      const isInView = rect.top >= 0 && rect.bottom <= window.innerHeight;
-      setIsInView(isInView);
-    }
-  };
-
-  useEffect(() => {
-    // Sayfa yüklendiğinde ve her kaydırma işleminde handleScroll fonksiyonunu çalıştır
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // İlk başta da kontrol et
-    console.log("useEffect", useEffect);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
   return (
     <>
       <div className="">
