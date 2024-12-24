@@ -2,7 +2,7 @@ import InformationText from "./InformationText";
 
 export default function InformationTexts() {
   return (
-    <div className="bg-slate-800 opacity-100 ">
+    <div className="bg-slate-800 opacity-100 px-96">
       <div className="container mx-auto p-4 items-center justify-center h-full text-9xl text-center">
         <InformationText child="Estetik ve teknik detayları bir araya getiren mimari görselleştirme kursu" />
         <InformationText

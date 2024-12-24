@@ -7,13 +7,13 @@ interface InfoProps {
 export default function InformationText({ child }: InfoProps) {
   return (
     <>
-      <div className="">
+      <div className="pt-24">
         <motion.div
           initial={{ color: "#6b6b6b" }}
           whileInView={{ color: "white" }}
-          className="text-8xl text-justify will-change-transform duration-300"
+          className="text-8xl will-change-transform duration-300"
           viewport={{
-            amount: 0.9,
+            amount: 0.75,
           }}
         >
           <p>{child}</p>
