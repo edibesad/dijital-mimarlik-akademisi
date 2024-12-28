@@ -9,9 +9,9 @@ export default function InformationText({ child }: InfoProps) {
     <>
       <div className="pt-24">
         <motion.div
-          initial={{ color: "#6b6b6b" }}
+          initial={{ color: "#404040" }}
           whileInView={{ color: "white" }}
-          className="text-8xl will-change-transform duration-300"
+          className="lg:text-8xl text-4xl will-change-transform duration-300"
           viewport={{
             amount: 0.75,
           }}

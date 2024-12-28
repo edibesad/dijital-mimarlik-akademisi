@@ -31,7 +31,7 @@ export default function Info({ children }: InfoProps) {
   const opacity = isBrowser ? Math.max(1 - scrollY / window.innerHeight, 0) : 1;
 
   return (
-    <div className="fixed top-0 w-screen object-fill z-[-10]">
+    <div className="fixed top-0 object-fill z-[-10] w-full">
       <motion.div style={{ opacity }}>{children}</motion.div>
     </div>
   );
