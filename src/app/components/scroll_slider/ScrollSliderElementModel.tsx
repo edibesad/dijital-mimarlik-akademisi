@@ -1,9 +1,10 @@
 export default class ScrollSliderElementModel {
-    text: String;
-    imgPath: String;
-    constructor(text: String, imgPath: String) {
-        this.text = text;
-        this.imgPath = imgPath;
-    }
+  title: string;
+  text: string;
+  imgPath: string;
+  constructor(title: string, text: string, imgPath: string) {
+    this.title = title;
+    this.text = text;
+    this.imgPath = imgPath;
+  }
 }
-
