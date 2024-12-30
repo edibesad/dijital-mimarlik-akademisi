@@ -10,22 +10,22 @@ const elements = [
   new ScrollSliderElementModel(
     "Sürekli Destek ve Etkileşim İçin Canlı Yayınlar ve Platform Erişimi",
     "Haftalık canlı yayınlar ve özel platformumuz üzerinde, eğitimle ilgili sorularınıza yanıt alabilir, meslektaşlarınızla iletişim kurarak deneyimlerinizi paylaşabilirsiniz.",
-    "imgPath1"
+    "/"
   ),
   new ScrollSliderElementModel(
     "Bilgiyi Özelleştirerek Verimli Öğrenme",
     "Pratik, akılda kalıcı uygulamaları, iç mimarlık disipliniyle harmanlayarak proje süreçlerinde gereken en kritik bilgileri, bilgi karmaşasından uzak bir şekilde sunarak öğrenmenizi sağlıyoruz.",
-    "imgPath1"
+    "/"
   ),
   new ScrollSliderElementModel(
     "Gelişiminiz İçin Hata Analizi ve Kapsamlı Geri Bildirim",
     "Ödevlerinizi analiz ederek, her bir hata üzerine detaylı geri bildirim sağlıyor ve yorumları özel platformda paylaşarak gelişim sürecinizi destekliyoruz.",
-    "imgPath1"
+    "/"
   ),
   new ScrollSliderElementModel(
     "Yapay Zeka ile Tasarımın Gücü: Mekanlardan Hayallerinizin Ötesine!",
     "Yapay zeka, tasarımda hayal gücünü sınırsız bir yaratıcılıkla buluştururken, süreçleri hızlandırıp benzersiz mekanların kapılarını aralıyor ve ben de size yapay zekayı mimaride nasıl kullanacağınızı öğretmek için buradayım.",
-    "imgPath1"
+    "/"
   ),
 ];
 
