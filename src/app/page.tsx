@@ -1,5 +1,6 @@
 "use client";
 
+import ExamplePhotos from "./components/example_photos/example_photos";
 import InformationTexts from "./components/information_texts/InformationTexts";
 import ScrollSlider from "./components/scroll_slider/ScrollSlider";
 import SmoothScrolling from "./components/SmoothScrolling";
@@ -14,9 +15,7 @@ export default function Home() {
         <WelcomeVideo />
         <InformationTexts />
         <ScrollSlider />
-        <div className="bg-pink-700 h-screen">
-          <div className="container"></div>
-        </div>
+        <ExamplePhotos />
         <UsingProducts />
       </SmoothScrolling>
     </>
