@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 import MarqueeElement from "./marquee_element";
 
@@ -35,11 +37,11 @@ export default function ExamplePhotos() {
   }, [direction]);
 
   return (
-    <div className="overflow-x-clip">
-      <div className="relative h-[105vh] ">
+    <div className="overflow-x-clip bg-gradient-to-r from-black to-[#737373]">
+      <div className="relative h-[110vh] ">
         <div className="sticky top-0 h-screen">
           <h1
-            className="text-4xl absolute z-20 text-center"
+            className="text-4xl absolute z-20 text-center text-white"
             style={{
               top: "15%",
               left: "50%",

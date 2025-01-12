@@ -1,3 +1,5 @@
+"use client";
+
 import UsingProductsElementAnimation from "./UsingProductsElemenAnimation";
 import UsingProductsElementModel from "./UsingProductsElementModel";
 import Image from "next/image";
@@ -22,7 +24,7 @@ export default function UsingProductsElement({
           width={2048}
           height={2048}
         />
-        <div className="col-span-2 text-center text-4xl place-content-center px-4">
+        <div className="col-span-2 text-center lg:text-4xl place-content-center px-4">
           {element.name}
         </div>
       </div>

@@ -11,7 +11,7 @@ export default function ExampleMarquee({
 }: ExampleMarqueeProps) {
   return (
     <div
-      className={`absolute inset-0 flex justify-center items-center py-12 whitespace-nowrap ${
+      className={`absolute bg-black inset-0 flex justify-center items-center py-12 whitespace-nowrap ${
         isSecond ? "animate-marquee2" : "animate-marquee"
       }`}
     >
