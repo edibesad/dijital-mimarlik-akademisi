@@ -10,7 +10,7 @@ const elements = [
 
 export default function NavigationButtons() {
   return (
-    <nav className="absolute w-full">
+    <nav className="absolute w-full h-full">
       <div className="sticky top-0 z-50 backdrop-blur-xl bg-gradient-to-b from-zinc-900/75 to-zinc-900/60 border-b border-zinc-800/50 transition-all duration-300 ease-in-out">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20 transition-all duration-300">

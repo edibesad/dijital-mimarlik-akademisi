@@ -15,8 +15,8 @@ const elements = [
 
 export default function SocialMediaButtons() {
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-4">
-      <div className="flex justify-center space-x-4 bg-transparent p-4">
+    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 ">
+      <div className="flex justify-center space-x-4 bg-transparent p-4  ">
         {elements.map((element, index) => (
           <SocailMediaButtonElement element={element} key={index} />
         ))}
