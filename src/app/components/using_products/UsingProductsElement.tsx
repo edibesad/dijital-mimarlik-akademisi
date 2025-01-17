@@ -13,19 +13,22 @@ export default function UsingProductsElement({
 }: UsingProductsElementProps) {
   return (
     <UsingProductsElementAnimation>
-      <div
-        className="grid grid-cols-3 gap-4 rounded-3xl h-full"
-        style={{ backgroundColor: element.color }}
-      >
-        <Image
-          className="rounded-3xl h-full object-fill"
-          alt={element.imgPath}
-          src={element.imgPath}
-          width={2048}
-          height={2048}
+      <div className="relative group">
+        <div
+          className="absolute h-full w-full rounded-3xl -z-10 opacity-20 group-hover:opacity-100 transition-all duration-300"
+          style={{ backgroundColor: element.color }}
         />
-        <div className="col-span-2 text-center lg:text-4xl place-content-center px-4">
-          {element.name}
+        <div className="grid grid-cols-3 gap-4 rounded-3xl h-full transition-all duration-300">
+          <Image
+            className="rounded-3xl h-full object-fill"
+            alt={element.imgPath}
+            src={element.imgPath}
+            width={2048}
+            height={2048}
+          />
+          <div className="col-span-2 text-center lg:text-4xl place-content-center px-4 text-white">
+            {element.name}
+          </div>
         </div>
       </div>
     </UsingProductsElementAnimation>

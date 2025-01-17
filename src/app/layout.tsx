@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import NavigationButtons from "./components/buttons/navigation_buttons/navigaiton_buttons";
+import SocialMediaButtons from "./components/buttons/social_media_buttons/social_media_buttons";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,7 +15,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <NavigationButtons />
+        <SocialMediaButtons />
+        {children}
+      </body>
     </html>
   );
 }

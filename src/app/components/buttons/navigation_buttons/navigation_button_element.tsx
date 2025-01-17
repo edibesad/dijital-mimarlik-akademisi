@@ -10,7 +10,9 @@ export default function NavigationButtonElement({
   return (
     <a
       href={model.href}
-      className="bg-transparent hover:bg-black text-black hover:text-white font-bold py-2 px-4 border rounded-full border-black transition-colors duration-300 ease-in-out"
+      className="text-zinc-400 hover:text-white font-medium py-2 px-4 rounded-md 
+      transition-all duration-300 ease-in-out hover:bg-zinc-800/50 
+      border border-transparent hover:border-zinc-700/50"
     >
       {model.text}
     </a>
