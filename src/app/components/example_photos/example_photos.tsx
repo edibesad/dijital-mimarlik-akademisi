@@ -43,7 +43,7 @@ export default function ExamplePhotos() {
           <h1
             className="text-4xl absolute z-20 text-center text-white"
             style={{
-              top: "15%",
+              top: "20%",
               left: "50%",
               transform: "translate(-50%, -50%)",
             }}

@@ -1,13 +1,22 @@
+import Image from "next/image";
+import Logo from "./components/logo";
+import Texts from "./components/texts";
+import CourseDetails from "./components/course_details";
+
 export default function About() {
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-800">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold text-white">About</h1>
-        <p className="text-white">
-          This is a demo project for a website using React, Vite, and Tailwind
-          CSS.
-        </p>
+    <>
+      <div className="absolute h-screen w-screen -z-10">
+        <Image alt="bg" src={"/images/about/background.jpg"} fill />
       </div>
-    </div>
+
+      <div className="w-screen h-screen">
+        <div className="grid grid-cols-2 h-full">
+          <Texts />
+          <Logo />
+        </div>
+      </div>
+      <CourseDetails />
+    </>
   );
 }

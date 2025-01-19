@@ -33,8 +33,8 @@ const ScrollSliderElement = ({
         <Image
           src={element.backgroundImgPath}
           alt={element.title}
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: "cover" }}
           className="h-full w-full object-cover filter brightness-75 contrast-125"
           priority
         />
@@ -85,7 +85,7 @@ const ScrollSliderElement = ({
                 <Image
                   src={element.imgPath}
                   alt={element.title}
-                  objectFit="cover"
+                  style={{ objectFit: "cover" }}
                   fill
                   className="rounded-lg"
                   priority

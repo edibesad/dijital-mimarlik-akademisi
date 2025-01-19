@@ -1,3 +1,5 @@
+"use client";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SocialMediaButtonElementModel from "./social_media_button_element_model";
 import Link from "next/link";
@@ -14,7 +16,11 @@ export default function SocialMediaButtonElement({
       href={element.href}
       className="self-center hover:scale-150 transition-transform duration-700"
     >
-      <FontAwesomeIcon icon={element.icon} className="w-[3vw]" />
+      <FontAwesomeIcon
+        icon={element.icon}
+        className="w-[3vw] h-[3vw]"
+        color="white"
+      />
     </Link>
   );
 }
