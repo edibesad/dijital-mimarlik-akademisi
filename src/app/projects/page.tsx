@@ -1,19 +1,72 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Row from "./components/row";
+import ProjectModel from "./project_model";
+import ImagePresenter from "./components/image_presenter";
+
+const studentProjects = [
+  new ProjectModel("Bungalov", 4, "/student/bungalov"),
+  new ProjectModel("Villa", 14, "/student/villa"),
+  new ProjectModel("Konut", 7, "/student/house"),
+  new ProjectModel("Yatak Odası", 13, "/student/bedroom"),
+  new ProjectModel("Salon", 9, "/student/saloon"),
+  new ProjectModel("Çalışma Odası", 3, "/student/bungalov"),
+];
+
+const professionalProjects = [
+  new ProjectModel("Restoran", 20, "/professional/restaurant"),
+  new ProjectModel("Villa Dış", 6, "/professional/villa-outside"),
+  new ProjectModel("Villa İç", 11, "/professional/villa-inside"),
+  new ProjectModel("Klinik", 4, "/professional/clinic"),
+  new ProjectModel("Konut", 6, "/professional/house"),
+  new ProjectModel("Konut", 12, "/professional/house2"),
+  new ProjectModel("Ofis", 5, "/professional/office"),
+  new ProjectModel("Optikçi", 5, "/professional/optician"),
+  new ProjectModel("Restoran", 5, "/professional/restaurant2"),
+  new ProjectModel("Showroom", 3, "/professional/showroom"),
+  new ProjectModel("Showroom", 5, "/professional/showroom2"),
+];
 
 export default function Projects() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [isStudentProjects, setIsStudentProjects] = useState(false);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-black to-neutral-800">
       <div className="h-full py-4 bg-grid-white/[0.02]">
         <div className="flex flex-col items-center mb-6 relative">
-          <div className="absolute inset-x-0 -top-4 h-24 bg-gradient-to-b from-neutral-700/20 via-neutral-600/10 to-transparent blur-2xl" />
+          {/* Gradient background - now with -z-10 to place it behind other elements */}
+          <div className="absolute inset-x-0 -top-4 h-24 bg-gradient-to-b from-neutral-700/20 via-neutral-600/10 to-transparent blur-2xl -z-10" />
+
+          {/* Toggle buttons now in front */}
+          <div className="flex gap-4 mb-6 relative z-10">
+            <button
+              type="button"
+              onClick={() => setIsStudentProjects(false)}
+              className={`px-6 py-2 rounded-lg transition-all duration-200 ${
+                !isStudentProjects
+                  ? "bg-neutral-200 text-black"
+                  : "bg-neutral-700/50 text-neutral-300"
+              }`}
+            >
+              Çalışmalarımız
+            </button>
+            <button
+              type="button"
+              onClick={() => setIsStudentProjects(true)}
+              className={`px-6 py-2 rounded-lg transition-all duration-200 ${
+                isStudentProjects
+                  ? "bg-neutral-200 text-black"
+                  : "bg-neutral-700/50 text-neutral-300"
+              }`}
+            >
+              Öğrenci Çalışmaları
+            </button>
+          </div>
+
           <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-neutral-200 via-neutral-300 to-neutral-200 bg-clip-text text-transparent">
-            Öğrenci Çalışmaları
+            {isStudentProjects ? "Öğrenci Çalışmaları" : "Çalışmalarımız"}
           </h1>
           <div className="h-1 w-24 bg-gradient-to-r from-neutral-500/60 via-neutral-400 to-neutral-500/60 rounded-full mt-2" />
         </div>
@@ -21,69 +74,30 @@ export default function Projects() {
         <div className="mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-4">
             <div className="w-full rounded-xl border border-white/10 p-4 overflow-hidden backdrop-blur-md bg-gradient-to-br from-white/[0.075] to-white/[0.025]">
-              <div className="grid grid-rows-6 gap-4 h-full">
-                <Row
-                  title="Bungalov"
-                  setSelectedImage={setSelectedImage}
-                  length={4}
-                  path="/bungalov"
-                />
-                <Row
-                  title="Villa"
-                  setSelectedImage={setSelectedImage}
-                  length={14}
-                  path="/villa"
-                />
-                <Row
-                  title="konut"
-                  setSelectedImage={setSelectedImage}
-                  length={7}
-                  path="/house"
-                />
-                <Row
-                  title="Yatak Odası"
-                  setSelectedImage={setSelectedImage}
-                  length={13}
-                  path="/bedroom"
-                />
-                <Row
-                  title="Salon"
-                  setSelectedImage={setSelectedImage}
-                  length={9}
-                  path="/saloon"
-                />
-                <Row
-                  title="Çalışma Odası"
-                  setSelectedImage={setSelectedImage}
-                  length={3}
-                  path="/bungalov"
-                />
+              <div className="grid auto-rows-auto gap-4 h-full">
+                {isStudentProjects
+                  ? studentProjects.map((project) => (
+                      <Row
+                        key={project.title + project.path}
+                        title={project.title}
+                        setSelectedImage={setSelectedImage}
+                        length={project.length}
+                        path={project.path}
+                      />
+                    ))
+                  : professionalProjects.map((project) => (
+                      <Row
+                        key={project.title + project.path}
+                        title={project.title}
+                        setSelectedImage={setSelectedImage}
+                        length={project.length}
+                        path={project.path}
+                      />
+                    ))}
               </div>
             </div>
 
-            <div className="w-full rounded-xl border relative border-white/10 p-4 backdrop-blur-md bg-gradient-to-br from-white/[0.075] to-white/[0.025]">
-              <div className="sticky top-0">
-
-                {selectedImage ? (
-                  <div className="relative w-full h-screen rounded-lg overflow-hidden ring-1 ring-white/10">
-                    <Image
-                      alt={selectedImage}
-                      src={selectedImage}
-                      fill
-                      style={{ objectFit: "contain" }}
-                      priority
-                      className="transition-all duration-300"Çalışmalarımız
-                    />
-                  </div>
-                ) : (
-                  <div className="flex items-center justify-center h-screen">
-                    <p className="text-neutral-200/60 text-lg">
-                      Görüntülemek için bir resim seçin
-                    </p>
-                  </div>
-                )}
-              </div>
-            </div>
+            <ImagePresenter image={selectedImage} />
           </div>
         </div>
       </div>

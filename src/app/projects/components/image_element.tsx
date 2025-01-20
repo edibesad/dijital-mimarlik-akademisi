@@ -15,6 +15,7 @@ export default function ImageElement({
   setSelectedImage,
 }: ImageElementProps) {
   const [onHover, setOnHover] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   return (
     <div
@@ -34,12 +35,19 @@ export default function ImageElement({
         setSelectedImage(image);
       }}
     >
+      {isLoading && (
+        <div className="absolute inset-0 flex items-center justify-center bg-black/20 backdrop-blur-sm z-10">
+          <div className="w-8 h-8 border-4 border-neutral-300 border-t-white rounded-full animate-spin" />
+        </div>
+      )}
       <Image
         alt="bg"
         src={image}
         fill
         className="transition-all duration-300 ease-in-out"
         style={{ objectFit: "cover" }}
+        onLoadingComplete={() => setIsLoading(false)}
+        priority={false}
       />
     </div>
   );

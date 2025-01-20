@@ -23,7 +23,6 @@ export default function Row({
         <Images
           length={length}
           path={"/images/projects" + path}
-          title={title}
           setSelectedImage={setSelectedImage}
         />
       </div>

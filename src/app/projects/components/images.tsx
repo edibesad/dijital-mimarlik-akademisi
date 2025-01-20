@@ -3,14 +3,12 @@ import ImageElement from "./image_element";
 
 interface ImageElementProps {
   path: string;
-  title: string;
   length: number;
   setSelectedImage: Dispatch<SetStateAction<string | null>>;
 }
 
 export default function Images({
   path,
-  title,
   setSelectedImage,
   length,
 }: ImageElementProps) {
@@ -20,9 +18,7 @@ export default function Images({
   );
   return (
     <div className="h-full w-full">
-      <div
-        className={`flex h-full w-full overflow-visible gap-1`}
-      >
+      <div className={`flex h-full w-full overflow-visible gap-1`}>
         {images.map((image, index) => (
           <ImageElement
             key={index}
@@ -32,6 +28,6 @@ export default function Images({
           />
         ))}
       </div>
-    </div >
+    </div>
   );
 }
