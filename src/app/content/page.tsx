@@ -78,10 +78,10 @@ export default function Page() {
     setCurrentIndex(prevIndex);
   };
 
-  useEffect(() => {
-    const interval = setInterval(nextSlide, 2000);
-    return () => clearInterval(interval);
-  });
+  // useEffect(() => {
+  //   const interval = setInterval(nextSlide, 2000);
+  //   return () => clearInterval(interval);
+  // });
 
   return (
     <div className="h-screen w-full bg-black/50 relative overflow-hidden">
