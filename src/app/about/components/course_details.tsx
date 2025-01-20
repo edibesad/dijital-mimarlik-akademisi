@@ -85,7 +85,7 @@ const CourseDetails = () => {
   });
 
   return (
-    <div className="h-screen w-screen bg-black/50 relative overflow-hidden">
+    <div className="h-screen w-full bg-black/50 relative overflow-hidden">
       <div className="absolute inset-0 flex items-center justify-center">
         {images.map((src, index) => (
           <Image

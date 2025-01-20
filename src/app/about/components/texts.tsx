@@ -28,7 +28,7 @@ export default function Texts() {
                 </span>
                 <br />
                 <br />
-                <div className="mt-5 pl-10 font-thin 2xl:text-3xl">
+                <div className="mt-5 pl-10 font-thin 2xl:text-2xl">
                   <p>
                     İç mimarlık & görselleştirme alanlarında 8 yıldan falza
                     süredir bir çok projede görev aldım ve alnmaktayım.
