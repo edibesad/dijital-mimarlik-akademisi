@@ -15,11 +15,11 @@ export default function Row({
   path,
 }: ImageElementProps) {
   return (
-    <div className="relative overflow-hidden group">
+    <div className="relative overflow-hidden group w-full">
       <h2 className="text-xl font-semibold text-neutral-100/90 mb-2 group-hover:text-neutral-200 transition-colors">
-        Bungalov
+        {title}
       </h2>
-      <div className="h-[calc(100%-32px)] overflow-hidden rounded-lg ring-1 ring-white/10 group-hover:ring-neutral-500/30 transition-all">
+      <div className="w-full h-full rounded-lg ring-1 ring-white/10 group-hover:ring-neutral-500/30 transition-all">
         <Images
           length={length}
           path={"/images/projects" + path}
