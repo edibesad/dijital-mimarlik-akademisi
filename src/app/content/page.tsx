@@ -14,11 +14,10 @@ export default function Page() {
   const imagesRef = useRef([]);
 
   const images = [
-    "/images/example_photos/1.jpg",
-    "/images/example_photos/2.jpg",
-    "/images/example_photos/3.jpg",
-    "/images/example_photos/4.jpg",
-    "/images/example_photos/6.jpg",
+    "/images/content/1.jpg",
+    "/images/content/2.jpg",
+    "/images/content/3.jpg",
+    "/images/content/4.jpg",
   ];
 
   useEffect(() => {
@@ -93,8 +92,10 @@ export default function Page() {
             src={src}
             alt={`Slide ${index + 1}`}
             className="absolute w-full h-full object-cover"
-            fill
+            width={1920}
+            height={1080}
             style={{
+              objectFit: "contain",
               opacity: index === currentIndex ? 1 : 0,
               transition: "opacity 0.5s",
             }}

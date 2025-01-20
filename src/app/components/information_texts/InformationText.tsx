@@ -108,10 +108,10 @@ const InformationText = ({ element, index }: InformationTextProps) => {
       </div>
 
       {/* Text container - Blur alanından bağımsız */}
-      <div className="h-screen w-1/2 flex items-center">
+      <div className="h-screen flex items-center">
         <div ref={textRef} className="relative z-20 pl-4 md:pl-8">
           <p
-            className={`${merriweather.className} text-2xl lg:text-4xl font-bold text-white leading-tight tracking-wide`}
+            className={`${merriweather.className} text-2xl lg:text-4xl font-bold text-white leading-tight tracking-wide px-64`}
           >
             {element.text}
           </p>
