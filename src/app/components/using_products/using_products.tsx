@@ -1,7 +1,7 @@
 "use client";
 
-import UsingProductsElement from "./UsingProductsElement";
-import UsingProductsElementModel from "./UsingProductsElementModel";
+import UsingProductsElement from "./using_products_element";
+import UsingProductsElementModel from "./using_products_element_model";
 
 const elements: UsingProductsElementModel[] = [
   new UsingProductsElementModel("3ds Max", "/images/3ds-max.png", "#7fc4dd"),

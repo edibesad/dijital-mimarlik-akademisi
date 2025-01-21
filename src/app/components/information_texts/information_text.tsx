@@ -5,7 +5,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { Merriweather } from "next/font/google";
-import InformationTextModel from "./InformationTextModel";
+import InformationTextModel from "./information_text_model";
 
 const merriweather = Merriweather({
   subsets: ["latin"],

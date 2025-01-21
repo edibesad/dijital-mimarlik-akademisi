@@ -1,7 +1,7 @@
 "use client";
 
-import InformationText from "./InformationText";
-import InformationTextModel from "./InformationTextModel";
+import InformationText from "./information_text";
+import InformationTextModel from "./information_text_model";
 
 const elements = [
   new InformationTextModel(

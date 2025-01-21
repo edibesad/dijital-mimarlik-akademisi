@@ -1,7 +1,7 @@
 "use client";
 
-import UsingProductsElementAnimation from "./UsingProductsElemenAnimation";
-import UsingProductsElementModel from "./UsingProductsElementModel";
+import UsingProductsElementAnimation from "./using_products_element_animation";
+import UsingProductsElementModel from "./using_products_element_model";
 import Image from "next/image";
 
 interface UsingProductsElementProps {

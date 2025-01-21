@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import NavigationButtons from "./components/buttons/navigation_buttons/navigaiton_buttons";
 import SocialMediaButtons from "./components/buttons/social_media_buttons/social_media_buttons";
-import SmootScrolling from "./components/SmoothScrolling";
+import SmootScrolling from "./components/smooth_scrolling";
 
 export const metadata: Metadata = {
   title: "Dijital Mimarlık Akademisi",

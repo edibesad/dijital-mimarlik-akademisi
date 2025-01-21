@@ -1,4 +1,4 @@
-import VideoAnimation from "./VideoAnimation";
+import VideoAnimation from "./video_animation";
 
 export default function InfoVideo() {
   return (

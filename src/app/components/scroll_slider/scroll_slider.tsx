@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
-import ScrollSliderElement from "./ScrollSliderElement";
-import ScrollSliderElementModel from "./ScrollSliderElementModel";
+import ScrollSliderElement from "./scroll_slider_element";
+import ScrollSliderElementModel from "./scroll_slider_element_model.tsx";
 const elements = [
   new ScrollSliderElementModel(
     "İç Mimar Bakış Açısıyla Profesyonel 3D Sanatçısından İpuçları",
