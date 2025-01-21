@@ -1,4 +1,3 @@
-// Texts.tsx
 import Background from "./background";
 import { Noto_Sans } from "next/font/google";
 
@@ -14,7 +13,6 @@ export default function Texts() {
         <Background />
         <div className="h-full w-full bg-black/50">
           <div className="h-full w-full flex flex-col gap-4 md:gap-5 p-4 md:p-6 lg:p-8">
-            {/* Header */}
             <h1 className="flex flex-col items-center w-full pt-4 md:pt-6 lg:pt-10">
               <span className="text-2xl md:text-3xl lg:text-4xl 2xl:text-6xl text-white text-center">
                 EĞİTMEN HAKKINDA
@@ -24,12 +22,11 @@ export default function Texts() {
               </div>
             </h1>
 
-            {/* Content */}
             <div
               className="flex flex-col lg:grid lg:grid-cols-2 h-full text-white font-thin 
               px-4 md:px-6 lg:px-8 mt-4 md:mt-6 lg:mt-8"
             >
-              <div className="hidden lg:block" /> {/* Spacer for desktop */}
+              <div className="hidden lg:block" />
               <div className="h-full w-full lg:text-right lg:pr-4 xl:pr-8 2xl:pr-10">
                 <h2 className="text-lg md:text-xl lg:text-2xl 2xl:text-4xl">
                   Muhammed Musab Ersan

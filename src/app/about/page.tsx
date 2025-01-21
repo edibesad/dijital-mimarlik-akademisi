@@ -21,7 +21,6 @@ export default function Page() {
           <div className="hidden lg:block">
             <Logo />
           </div>
-          {/* Logo for mobile */}
           <div className="lg:hidden absolute top-4 right-4 z-20">
             <Logo />
           </div>
