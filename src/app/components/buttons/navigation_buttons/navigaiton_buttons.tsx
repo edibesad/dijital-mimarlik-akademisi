@@ -8,7 +8,7 @@ import { Menu, X } from "lucide-react";
 
 const elements = [
   new NavigationButtonElementModel("/", "Anasayfa"),
-  new NavigationButtonElementModel("/projects", "Öğrenci Çalışmaları"),
+  new NavigationButtonElementModel("/projects", "Çalışmalarımız"),
   new NavigationButtonElementModel("/about", "Hakkımızda"),
   new NavigationButtonElementModel("/content", "Ders İçeriği"),
 ];

@@ -32,7 +32,7 @@ const InformationText = ({ element, index }: InformationTextProps) => {
     const textElement = textRef.current;
     const overlay = overlayRef.current;
 
-    // Image parallax ve fade efekti
+    // Image parallax and fade effect
     gsap.to(image, {
       yPercent: 20,
       ease: "none",
@@ -44,7 +44,7 @@ const InformationText = ({ element, index }: InformationTextProps) => {
       },
     });
 
-    // Overlay opacity animasyonu
+    // Overlay opacity animation
     gsap.fromTo(
       overlay,
       { opacity: 0 },
@@ -59,7 +59,7 @@ const InformationText = ({ element, index }: InformationTextProps) => {
       }
     );
 
-    // Text fade-in ve scale animasyonu
+    // Text fade-in and scale animation
     gsap.fromTo(
       textElement,
       {
@@ -86,7 +86,7 @@ const InformationText = ({ element, index }: InformationTextProps) => {
   return (
     <div ref={sectionRef} className="w-full h-screen sticky top-0">
       <div className="absolute inset-0 w-full h-screen overflow-hidden -z-10">
-        <div ref={imageRef} className="relative w-full h-[100%] transform-gpu">
+        <div ref={imageRef} className="relative w-full h-full transform-gpu">
           <div
             ref={overlayRef}
             className="absolute inset-0 bg-black opacity-30 transition-opacity z-10"
@@ -101,17 +101,23 @@ const InformationText = ({ element, index }: InformationTextProps) => {
         </div>
       </div>
 
-      {/* Blur efekti için overlay */}
-      <div className="absolute left-0 top-0 h-screen w-1/4 backdrop-blur-xl z-10">
-        {/* Sağ border için beyaz çizgi */}
+      {/* Blur effect overlay - Responsive width */}
+      <div className="absolute left-0 top-0 h-screen backdrop-blur-xl z-10
+        w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+        {/* Right border white line */}
         <div className="absolute right-0 top-0 h-full w-[1px] bg-white/50"></div>
       </div>
 
-      {/* Text container - Blur alanından bağımsız */}
+      {/* Text container - Independent from blur area */}
       <div className="h-screen flex items-center">
-        <div ref={textRef} className="relative z-20 pl-4 md:pl-8">
+        <div ref={textRef} className="relative z-20 w-full px-4 sm:px-6 md:px-8">
           <p
-            className={`${merriweather.className} text-2xl lg:text-4xl font-bold text-white leading-tight tracking-wide px-64`}
+            className={`${
+              merriweather.className
+            } text-white leading-tight tracking-wide
+            text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold
+            max-w-[90%] sm:max-w-[80%] md:max-w-[70%] lg:max-w-[60%] xl:max-w-[50%]
+            mx-auto sm:mx-0 sm:ml-8 md:ml-12 lg:ml-16 xl:ml-24`}
           >
             {element.text}
           </p>
@@ -126,34 +132,3 @@ const InformationText = ({ element, index }: InformationTextProps) => {
 };
 
 export default InformationText;
-
-// <div className="w-full h-[120vh] sticky top-0">
-//   <div className="absolute -z-10 h-screen w-full">
-//     <motion.div
-//       initial={{ color: "white" }}
-//       whileInView={{ color: "#404040" }}
-//       className="will-change-transform duration-300"
-//       viewport={{
-//         amount: 1,
-//       }}
-//     >
-//       <div className="h-screen w-full relative">
-//         <div className="absolute inset-0 bg-white/50 z-10"></div>
-//         <Image
-//           src={"/images/example_photos/1.jpg"}
-//           width={1920}
-//           height={1080}
-//           alt="img"
-//           style={{
-//             width: "100%",
-//             height: "100%",
-//             objectFit: "cover",
-//           }}
-//         />
-//       </div>
-//     </motion.div>
-//   </div>
-//   <div className="container mx-auto h-screen flex items-center justify-center lg:text-4xl text-4xl ">
-//     <p>{child}</p>
-//   </div>
-// </div>

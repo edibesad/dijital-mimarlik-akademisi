@@ -46,7 +46,7 @@ export default function ImageElement({
         fill
         className="transition-all duration-300 ease-in-out"
         style={{ objectFit: "cover" }}
-        onLoadingComplete={() => setIsLoading(false)}
+        onLoad={() => setIsLoading(false)}
         priority={false}
       />
     </div>

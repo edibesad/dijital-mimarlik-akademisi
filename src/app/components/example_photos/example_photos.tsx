@@ -9,57 +9,85 @@ const images = Array.from(
 );
 
 export default function ExamplePhotos() {
-  const ref = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const marqueeRef = useRef<HTMLDivElement>(null);
   const [xTranslate, setXTranslate] = useState(0);
   const [direction, setDirection] = useState(-1);
 
   useEffect(() => {
-    if (!ref.current) return;
+    if (!marqueeRef.current) return;
 
-    const interval = setInterval(() => {
+    let animationFrameId: number;
+    let lastTimestamp: number;
+    const speed = 0.05;
+
+    const animate = (timestamp: number) => {
+      if (!lastTimestamp) lastTimestamp = timestamp;
+      const deltaTime = timestamp - lastTimestamp;
+      
       setXTranslate((prev) => {
-        const rect = ref.current!.getBoundingClientRect();
+        const rect = marqueeRef.current!.getBoundingClientRect();
+        const maxTranslate = Math.ceil(rect.width / 2);
 
-        if (prev <= -Math.ceil(rect.width / 2)) {
+        if (prev <= -maxTranslate) {
           setDirection(1);
         }
         if (prev >= 0) {
           setDirection(-1);
         }
 
-        return prev + direction * 1;
+        return prev + direction * speed * deltaTime;
       });
-    }, 10);
+
+      lastTimestamp = timestamp;
+      animationFrameId = requestAnimationFrame(animate);
+    };
 
     return () => {
-      clearInterval(interval);
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
     };
   }, [direction]);
 
   return (
     <div className="overflow-x-clip bg-gradient-to-r from-black to-[#737373]">
-      <div className="relative h-[110vh] ">
-        <div className="sticky top-0 h-screen">
-          <h1
-            className="text-4xl absolute z-20 text-center text-white"
-            style={{
-              top: "20%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-            }}
-          >
-            HAYALİNİZİ ESTETİK VE TEKNİKLE HARMANLAYARAK PROJELERİNİZE HAYAT
-            VERİN
-          </h1>
+      <div className="relative h-[110vh]">
+        <div className="sticky top-0 h-screen" ref={containerRef}>
+          {/* Heading Container */}
+          <div className="absolute z-20 w-full top-[10%] px-4 sm:px-6 md:px-8">
+            <h1 className="text-white text-center font-bold
+              text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl
+              max-w-4xl mx-auto
+              leading-tight sm:leading-tight md:leading-tight
+              tracking-tight"
+            >
+              HAYALİNİZİ ESTETİK VE TEKNİKLE HARMANLAYARAK PROJELERİNİZE HAYAT
+              VERİN
+            </h1>
+          </div>
+
+          {/* Images Container */}
           <div
-            ref={ref}
-            style={{ transform: `translateX(${xTranslate}px)` }}
+            ref={marqueeRef}
+            style={{
+              transform: `translateX(${xTranslate}px)`,
+              transition: 'transform 0.3s ease-out'
+            }}
             className="flex items-center h-screen"
           >
-            {images.map((img, index) => (
-              <MarqueeElement key={index} img={img} />
+            {/* Double the images for smooth infinite scroll */}
+            {[...images, ...images].map((img, index) => (
+              <MarqueeElement 
+                key={`${img}-${index}`} 
+                img={img}
+              />
             ))}
           </div>
+
+          {/* Gradient overlays for smooth edges */}
+          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent pointer-events-none z-10" />
+          <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#737373] to-transparent pointer-events-none z-10" />
         </div>
       </div>
     </div>
