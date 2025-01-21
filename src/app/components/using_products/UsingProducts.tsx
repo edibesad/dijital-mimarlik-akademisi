@@ -26,12 +26,12 @@ const elements: UsingProductsElementModel[] = [
 
 export default function UsingProducts() {
   return (
-    <div className="h-screen w-full bg-gradient-to-r from-black to-neutral-800">
+    <div className="md:h-screen w-full bg-gradient-to-r from-black to-neutral-800">
       <div className="container mx-auto h-full flex flex-col items-center justify-center ">
         <h1 className="text-white text-5xl mb-8">Kullanılan Yazılımlar</h1>
         <br /> <br />
         <br />
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-6">
           {elements.map((element, index) => (
             <UsingProductsElement element={element} key={index} />
           ))}

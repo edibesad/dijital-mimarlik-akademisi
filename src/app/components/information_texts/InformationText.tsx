@@ -101,23 +101,23 @@ const InformationText = ({ element, index }: InformationTextProps) => {
         </div>
       </div>
 
-      {/* Blur effect overlay - Responsive width */}
-      <div className="absolute left-0 top-0 h-screen backdrop-blur-xl z-10
-        w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-        {/* Right border white line */}
+      <div
+        className="absolute left-0 top-0 h-screen backdrop-blur-xl z-10
+        w-full sm:w-1/2 md:w-1/3 lg:w-1/4"
+      >
         <div className="absolute right-0 top-0 h-full w-[1px] bg-white/50"></div>
       </div>
 
-      {/* Text container - Independent from blur area */}
-      <div className="h-screen flex items-center">
-        <div ref={textRef} className="relative z-20 w-full px-4 sm:px-6 md:px-8">
+      <div className="h-screen flex items-center justify-center">
+        <div
+          ref={textRef}
+          className="relative z-20 w-full px-4 sm:px-6 md:px-8 flex justify-center"
+        >
           <p
-            className={`${
-              merriweather.className
-            } text-white leading-tight tracking-wide
+            className={`${merriweather.className} text-white leading-tight tracking-wide
             text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold
             max-w-[90%] sm:max-w-[80%] md:max-w-[70%] lg:max-w-[60%] xl:max-w-[50%]
-            mx-auto sm:mx-0 sm:ml-8 md:ml-12 lg:ml-16 xl:ml-24`}
+            text-center`}
           >
             {element.text}
           </p>
