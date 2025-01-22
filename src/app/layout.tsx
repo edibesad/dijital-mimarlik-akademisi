@@ -3,6 +3,13 @@ import "./globals.css";
 import NavigationButtons from "./components/buttons/navigation_buttons/navigaiton_buttons";
 import SocialMediaButtons from "./components/buttons/social_media_buttons/social_media_buttons";
 import SmootScrolling from "./components/smooth_scrolling";
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "700", "900"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Dijital Mimarlık Akademisi",
@@ -19,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={poppins.className}>
         <NavigationButtons />
         <SocialMediaButtons />
         <SmootScrolling>{children}</SmootScrolling>
