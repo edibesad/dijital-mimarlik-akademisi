@@ -26,7 +26,7 @@ const ScrollSliderElement = ({
         pointerEvents: opacity > 0 ? "auto" : "none",
       }}
     >
-      {/* Background Image Container */}
+      {/* Background Image Container with Enhanced Dimming Overlay */}
       <div className="absolute inset-0 w-full h-full">
         <div className="absolute inset-0 bg-black/30 z-10" />
         <Image
@@ -52,7 +52,7 @@ const ScrollSliderElement = ({
                 transition: "transform 0.6s ease-out, opacity 0.6s ease-out",
               }}
             >
-              <h1 className="font-bold text-l text-white mb-4 tracking-tight">
+              <h1 className="font-bold text-xl md:text-2xl text-white mb-4 tracking-tight">
                 {element.title}
               </h1>
             </div>
@@ -103,7 +103,7 @@ const ScrollSliderElement = ({
                 transition: "transform 0.6s ease-out, opacity 0.6s ease-out",
               }}
             >
-              <h1 className="font-bold text-4xl xl:text-5xl 2xl:text-6xl text-white mb-4 tracking-tight">
+              <h1 className="font-bold text-xl xl:text-4xl 2xl:text-5xl text-white mb-4 tracking-tight">
                 {element.title}
               </h1>
             </div>
